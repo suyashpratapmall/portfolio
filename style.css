@@ -1741,3 +1741,62 @@ select.form-control {
 /* Make sure no CSS references --color-teal-XXX or rgba(33, 128, 141) remain */
 /* Replace these with the above royal blue palette throughout your CSS */
 
+/* Ensure the home section takes into account the fixed nav height */
+#home.section {
+  padding-top: var(--nav-height); /* Add top padding equal to nav height */
+}
+
+/* Adjust main container to prevent image cropping and align near nav */
+.main-container {
+  padding-top: 0; /* Remove extra padding if any */
+  margin-top: calc(var(--nav-height) * 0.5); /* Slight margin top to avoid overlap */
+}
+
+/* Responsive image styling to avoid cropping */
+.main-container .image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 50%;
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15), 0 0 36px rgba(251, 191, 36, 0.06);
+  transform: translateZ(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Fix for 'Hey I'm' visibility in home content */
+.content h1 {
+  position: relative;
+  z-index: 1; /* Bring text above other layers */
+  color: var(--text-dark); /* Ensure text color is visible */
+  font-size: clamp(1.6rem, 2.5rem + 1vw, 3rem);
+}
+
+/* Specific media query fix for mobile */
+@media (max-width: 768px) {
+  /* Ensure image and content are stacked and image is visible near nav */
+  .main-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: var(--nav-height); /* full nav height margin */
+  }
+
+  .main-container .image {
+    width: 100%;
+    max-width: 260px; /* Responsive smaller image */
+    margin-bottom: 1rem;
+    margin-left: 0;
+  }
+
+  .main-container .image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure the heading text is visible and not clipped */
+  .content h1 {
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+  }
+}
