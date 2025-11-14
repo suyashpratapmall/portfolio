@@ -1806,4 +1806,49 @@ select.form-control {
   justify-content: center; /* horizontally center */
   padding-top: var(--nav-height); /* ensures image never hides under nav */
 }
+/* ============================================================
+   FIX 1 — HERO IMAGE MOBILE CENTER + NO CROPPING
+   ============================================================ */
+@media (max-width: 768px) {
 
+  #home {
+    padding-top: calc(var(--nav-height) + 20px) !important;
+    min-height: calc(100vh - var(--nav-height)) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .main-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .main-container .image {
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+/* ============================================================
+   FIX 2 — CONTACT DETAIL COLORS (EMAIL, PHONE, LINKEDIN)
+   Remove grey, enforce proper royal blue
+   ============================================================ */
+
+.contact-details a,
+.contact-info a,
+#contact a,
+footer a[href^="mailto:"],
+footer a[href^="tel:"] {
+  color: var(--primary-blue) !important;
+  font-weight: 600;
+}
+
+.contact-details i,
+.contact-info i,
+#contact i {
+  color: var(--primary-blue) !important;
+}
