@@ -1852,3 +1852,52 @@ footer a[href^="tel:"] {
 #contact i {
   color: var(--primary-blue) !important;
 }
+
+/* FINAL FIX – Prevent hero image from being cut on all mobile devices */
+@media (max-width: 768px) {
+  #home {
+    padding-top: calc(var(--nav-height) + 40px) !important;
+  }
+  .main-container {
+    margin-top: 40px !important;
+  }
+  .main-container .image img {
+    margin-top: 20px !important;
+  }
+}
+
+/* ==========================================
+   FIX — Perfect alignment + matching style
+   ========================================== */
+
+.content h1,
+.content .typewriter {
+  text-align: left !important;          /* same start point */
+  margin-left: 0 !important;            /* remove unwanted shift */
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Font harmony: matching weight + spacing */
+.content h1 {
+  font-weight: 700 !important;          /* clean premium bold */
+  letter-spacing: -0.5px !important;    
+  line-height: 1.15 !important;         
+}
+
+.content .typewriter {
+  font-weight: 600 !important;          /* matches h1 visually */
+  letter-spacing: -0.3px !important;
+  line-height: 1.15 !important;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 768px) {
+  .content h1,
+  .content .typewriter {
+    text-align: left !important;
+    padding-left: 4px !important;       /* keeps perfect alignment */
+  }
+}
+
+
