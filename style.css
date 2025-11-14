@@ -1800,3 +1800,10 @@ select.form-control {
     padding-left: 0.5rem;
   }
 }
+#home {
+  display: flex;
+  align-items: center;   /* vertically center */
+  justify-content: center; /* horizontally center */
+  padding-top: var(--nav-height); /* ensures image never hides under nav */
+}
+
